@@ -4,23 +4,79 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fc83fab-da17-4cc1-bf4b-7122f2dee203" name="更改" comment="" />
+    <list default="true" id="6fc83fab-da17-4cc1-bf4b-7122f2dee203" name="更改" comment="功能：项目初始化">
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/main_graph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_bge_embedding.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_document_split.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_entry.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_import_milvus.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_item_name_recognition.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_md_img.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_pdf_to_md.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/import_/agent/state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/process/query/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/import_/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/import_/embedding_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/import_/entry_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/import_/index_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/import_/item_name_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/import_/pdf_parse_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/import_/split_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/query/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/01_test_import_app_invoke.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/process/import_/__init__.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;yyyxh3329&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/yyyxh3329/ai_knowlege_base.git&quot;,
+    &quot;accountId&quot;: &quot;9b066818-ccb0-4bbc-9334-7f702cf1750f&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="3FIZKD8o9l5Z45lQog5aERBSaLY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.01_test_import_app_invoke.executor": "Run",
+    "Python.logger.executor": "Run",
+    "Python.providers.executor": "Run",
+    "Python.state.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/PYcharm/PythonProject/ai_knowledge_base",
     "node.js.detected.package.eslint": "true",
@@ -28,10 +84,125 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\app\infra\config" />
+      <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\doc" />
+      <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\shared" />
+      <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\shared\runtime" />
+      <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\resources\prompts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\app" />
+      <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\shared\runtime" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.01_test_import_app_invoke">
+    <configuration name="01_test_import_app_invoke" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ai_knowledge_base" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/01_test_import_app_invoke.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="logger" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ai_knowledge_base" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/shared/runtime" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shared/runtime/logger.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="providers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ai_knowledge_base" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/infra/config" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/infra/config/providers.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="state" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ai_knowledge_base" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/process/import_/agent" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/process/import_/agent/state.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.01_test_import_app_invoke" />
+        <item itemvalue="Python.state" />
+        <item itemvalue="Python.providers" />
+        <item itemvalue="Python.logger" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -50,11 +221,39 @@
       <updated>1781764477401</updated>
       <workItem from="1781764478514" duration="1521000" />
       <workItem from="1781766443148" duration="32000" />
-      <workItem from="1781766496045" duration="9000" />
+      <workItem from="1781766479694" duration="30896000" />
+      <workItem from="1782135662538" duration="1272000" />
     </task>
+    <task id="LOCAL-00001" summary="功能：项目初始化">
+      <option name="closed" value="true" />
+      <created>1782053999206</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1782053999206</updated>
+    </task>
+    <task id="LOCAL-00002" summary="功能：项目初始化">
+      <option name="closed" value="true" />
+      <created>1782054667075</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1782054667076</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="功能：项目初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="功能：项目初始化" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ai_knowledge_base$state.coverage" NAME="state 覆盖结果" MODIFIED="1782109143901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/process/import_/agent" />
+    <SUITE FILE_PATH="coverage/ai_knowledge_base$01_test_import_app_invoke.coverage" NAME="01_test_import_app_invoke 覆盖结果" MODIFIED="1782111817173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/ai_knowledge_base$logger.coverage" NAME="logger 覆盖结果" MODIFIED="1782051954173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shared/runtime" />
+    <SUITE FILE_PATH="coverage/ai_knowledge_base$providers.coverage" NAME="providers 覆盖结果" MODIFIED="1782053480371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/infra/config" />
   </component>
 </project>
