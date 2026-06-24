@@ -6,12 +6,13 @@ import requests
 
 from app.infra.config.providers import infra_config
 from app.process.import_.agent.state import ImportGraphState
-from app.shared.runtime.logger import logger, PROJECT_ROOT
+from app.shared.runtime.logger import logger, PROJECT_ROOT, step_log
 from app.rag.import_.config import PDF_PARSE_SERVICE_LOCAL_DIR, MINERU_POLL_INTERVAL_SECONDS, \
     MINERU_DOWNLOAD_TIMEOUT_SECONDS
 
 
 # 1. 参数获取和校验 (state -> str)-> (pdf_path:Path,local_dir:Path)  validate_pdf_paths
+@step_log("validate_pdf_paths")
 def validate_pdf_paths(state: ImportGraphState) -> tuple[Path, Path]:
     # 1.1 state获取 pdf_path 和 local_dir : str
     pdf_path = state.get("pdf_path")
@@ -54,7 +55,7 @@ def validate_pdf_paths(state: ImportGraphState) -> tuple[Path, Path]:
     # 1.7 返回结果 return pdf_path_obj , local_dir_obj
     return pdf_path_obj, local_dir_obj
 
-
+@step_log("upload_pdf_and_poll")
 def upload_pdf_and_poll(pdf_path_obj) -> str:
     # 2.1 向minerU服务器发送请求申请上传地址 (batch_id / url)
 
@@ -182,7 +183,7 @@ def upload_pdf_and_poll(pdf_path_obj) -> str:
             time.sleep(MINERU_POLL_INTERVAL_SECONDS)
             continue
 
-
+@step_log("download_and_extract_markdown")
 def download_and_extract_markdown(zip_url: str, local_path_obj: Path, file_name: str):
     """
            进行地址下载和解压,以及重命名! 最终返回md_path_obj
@@ -246,7 +247,7 @@ def download_and_extract_markdown(zip_url: str, local_path_obj: Path, file_name:
     md_obj_path.rename(md_obj_path.with_name(f"{file_name}.md"))
     return md_obj_path
 
-
+@step_log("parse_pdf_to_markdown")
 def parse_pdf_to_markdown(state: ImportGraphState) -> ImportGraphState:
     """
       进行pdf转成md业务!

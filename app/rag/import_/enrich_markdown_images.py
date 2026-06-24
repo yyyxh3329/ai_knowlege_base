@@ -11,11 +11,11 @@ from app.infra.llm.providers import llm_providers
 from app.process.import_.agent.state import ImportGraphState
 from app.rag.import_.config import SUPPORTED_IMAGE_EXTENSIONS
 from app.shared.runtime.load_prompt import load_prompt
-from app.shared.runtime.logger import logger
+from app.shared.runtime.logger import logger, step_log
 from app.shared.utils.rate_limit_utils import apply_api_rate_limit
 from app.infra.object_storage.minio_gateway import minio_gateway
 
-
+@step_log("validates_and_get_date")
 def validates_and_get_date(state: ImportGraphState):
     # 1. 获取md_path
     md_path = state.get("md_path")
@@ -37,7 +37,7 @@ def validates_and_get_date(state: ImportGraphState):
     images_path_obj: Path = md_path_obj.parent / "images"
     return md_content, images_path_obj, md_path_obj
 
-
+@step_log("scan_images")
 def scan_images(images_path_obj, md_content):
     """
     进行图片扫面
@@ -75,7 +75,7 @@ def scan_images(images_path_obj, md_content):
         )
     return image_context
 
-
+@step_log("summaries_images")
 def summaries_images(image_content: list[tuple[str, str, tuple[str, str]]], stem: str) -> dict[str, str]:
     """
          7.1 获取模型对象 vision_chat()
@@ -131,7 +131,7 @@ def summaries_images(image_content: list[tuple[str, str, tuple[str, str]]], stem
 
         return image_summaries
 
-
+@step_log("upload_images_and_replace")
 def upload_images_and_replace(md_content: str, image_summaries: dict[str, str],
                               image_content: list[tuple[str, str, tuple[str, str]]], stem: str) -> str:
     """
@@ -212,7 +212,7 @@ def upload_images_and_replace(md_content: str, image_summaries: dict[str, str],
         md_content = reg.sub(lambda _: f"![{image_summary}]({image_url})", md_content)
     return md_content
 
-
+@step_log("backup_new_md_content")
 def backup_new_md_content(md_content_new: str, md_path_obj: Path) -> str:
     """
       进行md_content_new备份,防止后续确定,再次读取!
@@ -227,7 +227,7 @@ def backup_new_md_content(md_content_new: str, md_path_obj: Path) -> str:
     logger.info(f"将md_content_new进行备份,备份地址为:{md_new_path_obj}")
     return str(md_new_path_obj)
 
-
+@step_log("enrich_markdown_images")
 def enrich_markdown_images(state: ImportGraphState) -> ImportGraphState:
     """
     Markdown 图片增强服务：

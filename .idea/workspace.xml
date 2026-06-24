@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fc83fab-da17-4cc1-bf4b-7122f2dee203" name="更改" comment="功能：增加infra中的minio和llm公共类通用功能">
+    <list default="true" id="6fc83fab-da17-4cc1-bf4b-7122f2dee203" name="更改" comment="功能：完成node_md_img节点的图片解析业务代码及其单元测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/infra/object_storage/minio_gateway.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/infra/object_storage/minio_gateway.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_md_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_md_img.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_pdf_to_md.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_pdf_to_md.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/rag/import_/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/clients/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/clients/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/shared/utils/rate_limit_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/rate_limit_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/rag/import_/pdf_parse_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/pdf_parse_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +229,7 @@
       <workItem from="1781766443148" duration="32000" />
       <workItem from="1781766479694" duration="30896000" />
       <workItem from="1782135662538" duration="22419000" />
-      <workItem from="1782206632125" duration="30642000" />
+      <workItem from="1782206632125" duration="31348000" />
     </task>
     <task id="LOCAL-00001" summary="功能：项目初始化">
       <option name="closed" value="true" />
@@ -284,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782283741112</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="功能：完成node_md_img节点的图片解析业务代码及其单元测试">
+      <option name="closed" value="true" />
+      <created>1782312730222</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1782312730222</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,33 +321,8 @@
     <MESSAGE value="功能：完成任务分发节点(ode_entry)的业务逻辑及其节点测试" />
     <MESSAGE value="功能：完成PDF转Markdown(node_pdf_to_md)节点功能" />
     <MESSAGE value="功能：增加infra中的minio和llm公共类通用功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="功能：增加infra中的minio和llm公共类通用功能" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py</url>
-          <line>247</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py</url>
-          <line>95</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py</url>
-          <line>159</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py</url>
-          <line>212</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="功能：完成node_md_img节点的图片解析业务代码及其单元测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="功能：完成node_md_img节点的图片解析业务代码及其单元测试" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ai_knowledge_base$node_pdf_to_md.coverage" NAME="node_pdf_to_md 覆盖结果" MODIFIED="1782306817056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/process/import_/agent/nodes" />
