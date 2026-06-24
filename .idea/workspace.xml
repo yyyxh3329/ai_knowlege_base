@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fc83fab-da17-4cc1-bf4b-7122f2dee203" name="更改" comment="功能：完成任务分发节点(ode_entry)的业务逻辑及其节点测试">
-      <change afterPath="$PROJECT_DIR$/app/rag/import_/config.py" afterDir="false" />
+    <list default="true" id="6fc83fab-da17-4cc1-bf4b-7122f2dee203" name="更改" comment="功能：完成PDF转Markdown(node_pdf_to_md)节点功能">
+      <change afterPath="$PROJECT_DIR$/app/infra/llm/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/infra/llm/providers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/infra/object_storage/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/infra/object_storage/minio_gateway.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_pdf_to_md.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_pdf_to_md.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/rag/import_/pdf_parse_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/pdf_parse_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/rag/import_/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +231,7 @@
       <workItem from="1781766443148" duration="32000" />
       <workItem from="1781766479694" duration="30896000" />
       <workItem from="1782135662538" duration="22419000" />
-      <workItem from="1782206632125" duration="7471000" />
+      <workItem from="1782206632125" duration="14249000" />
     </task>
     <task id="LOCAL-00001" summary="功能：项目初始化">
       <option name="closed" value="true" />
@@ -262,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782139880700</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="功能：完成PDF转Markdown(node_pdf_to_md)节点功能">
+      <option name="closed" value="true" />
+      <created>1782269608204</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1782269608204</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +305,8 @@
     <MESSAGE value="功能：项目初始化" />
     <MESSAGE value="功能：初步完成项目结构，主图节点搭建" />
     <MESSAGE value="功能：完成任务分发节点(ode_entry)的业务逻辑及其节点测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="功能：完成任务分发节点(ode_entry)的业务逻辑及其节点测试" />
+    <MESSAGE value="功能：完成PDF转Markdown(node_pdf_to_md)节点功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="功能：完成PDF转Markdown(node_pdf_to_md)节点功能" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ai_knowledge_base$node_pdf_to_md.coverage" NAME="node_pdf_to_md 覆盖结果" MODIFIED="1782269211374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/process/import_/agent/nodes" />
