@@ -11,8 +11,8 @@ _GLOBAL_REQUEST_TIMES: Deque[float] = deque()
 
 
 def apply_api_rate_limit(
-        max_requests: int = 500,
-        window_seconds: int = 60
+        max_requests: int = 3000, # 限速次数
+        window_seconds: int = 60  # 时长
 ) -> None:
     """
     通用滑动窗口API速率限制器（抽离为公共工具）

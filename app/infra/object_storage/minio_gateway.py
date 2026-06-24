@@ -24,14 +24,14 @@ class MinioGateway:
         return get_minio_client()
 
     # 封装一个拼接访问地址的函数
-    def build_image_url(self, stem: str, object_name: str) -> str:
+    def build_image_url(self, stem: str, image_name: str) -> str:
         """
           object_name = upload-images / 文件名 / 图片名称.png
-        :param object_name:
+        :param image_name:
         :return:
         """
         image_url = "https://" if infra_config.minio_config.minio_secure else "http://" + (f"{infra_config.minio_config.endpoint}"
-            f"/{infra_config.minio_config.bucket_name}{infra_config.minio_config.minio_img_dir}/{stem}/{object_name}")
+            f"/{infra_config.minio_config.bucket_name}{infra_config.minio_config.minio_img_dir}/{stem}/{image_name}")
 
         return image_url
 

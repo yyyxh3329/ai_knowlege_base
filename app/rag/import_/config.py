@@ -9,3 +9,5 @@ MINERU_DOWNLOAD_TIMEOUT_SECONDS = 30
 
 # 定义local_dir对应输出的常来那个
 PDF_PARSE_SERVICE_LOCAL_DIR = "output"
+
+SUPPORTED_IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp"}

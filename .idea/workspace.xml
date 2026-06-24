@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fc83fab-da17-4cc1-bf4b-7122f2dee203" name="更改" comment="功能：完成PDF转Markdown(node_pdf_to_md)节点功能">
-      <change afterPath="$PROJECT_DIR$/app/infra/llm/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/infra/llm/providers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/infra/object_storage/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/infra/object_storage/minio_gateway.py" afterDir="false" />
+    <list default="true" id="6fc83fab-da17-4cc1-bf4b-7122f2dee203" name="更改" comment="功能：增加infra中的minio和llm公共类通用功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/infra/object_storage/minio_gateway.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/infra/object_storage/minio_gateway.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_md_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_md_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_pdf_to_md.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_pdf_to_md.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/rag/import_/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/clients/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/clients/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/shared/utils/rate_limit_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/shared/utils/rate_limit_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +53,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.01_test_import_app_invoke.executor": "Run",
+    "Python.enrich_markdown_images.executor": "Debug",
     "Python.logger.executor": "Run",
     "Python.node_entry.executor": "Debug",
+    "Python.node_md_img.executor": "Debug",
     "Python.node_pdf_to_md.executor": "Run",
     "Python.pdf_parse_service.executor": "Debug",
     "Python.providers.executor": "Run",
@@ -85,8 +88,8 @@
       <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\shared\runtime" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.node_pdf_to_md">
-    <configuration name="01_test_import_app_invoke" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.node_md_img">
+    <configuration name="enrich_markdown_images" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ai_knowledge_base" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,12 +98,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/rag/import_" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/01_test_import_app_invoke.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -124,6 +127,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/process/import_/agent/nodes/node_entry.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="node_md_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ai_knowledge_base" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/process/import_/agent/nodes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/process/import_/agent/nodes/node_md_img.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -178,36 +204,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="state" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ai_knowledge_base" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/process/import_/agent" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/process/import_/agent/state.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.node_md_img" />
+        <item itemvalue="Python.enrich_markdown_images" />
         <item itemvalue="Python.node_pdf_to_md" />
         <item itemvalue="Python.node_entry" />
         <item itemvalue="Python.pdf_parse_service" />
-        <item itemvalue="Python.01_test_import_app_invoke" />
-        <item itemvalue="Python.state" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +234,7 @@
       <workItem from="1781766443148" duration="32000" />
       <workItem from="1781766479694" duration="30896000" />
       <workItem from="1782135662538" duration="22419000" />
-      <workItem from="1782206632125" duration="14249000" />
+      <workItem from="1782206632125" duration="30642000" />
     </task>
     <task id="LOCAL-00001" summary="功能：项目初始化">
       <option name="closed" value="true" />
@@ -273,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782269608204</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="功能：增加infra中的minio和llm公共类通用功能">
+      <option name="closed" value="true" />
+      <created>1782283741112</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1782283741112</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,15 +317,44 @@
     <MESSAGE value="功能：初步完成项目结构，主图节点搭建" />
     <MESSAGE value="功能：完成任务分发节点(ode_entry)的业务逻辑及其节点测试" />
     <MESSAGE value="功能：完成PDF转Markdown(node_pdf_to_md)节点功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="功能：完成PDF转Markdown(node_pdf_to_md)节点功能" />
+    <MESSAGE value="功能：增加infra中的minio和llm公共类通用功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="功能：增加infra中的minio和llm公共类通用功能" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py</url>
+          <line>247</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py</url>
+          <line>212</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ai_knowledge_base$node_pdf_to_md.coverage" NAME="node_pdf_to_md 覆盖结果" MODIFIED="1782269211374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/process/import_/agent/nodes" />
+    <SUITE FILE_PATH="coverage/ai_knowledge_base$node_pdf_to_md.coverage" NAME="node_pdf_to_md 覆盖结果" MODIFIED="1782306817056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/process/import_/agent/nodes" />
     <SUITE FILE_PATH="coverage/ai_knowledge_base$state.coverage" NAME="state 覆盖结果" MODIFIED="1782109143901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/process/import_/agent" />
     <SUITE FILE_PATH="coverage/ai_knowledge_base$01_test_import_app_invoke.coverage" NAME="01_test_import_app_invoke 覆盖结果" MODIFIED="1782111817173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/ai_knowledge_base$node_md_img.coverage" NAME="node_md_img 覆盖结果" MODIFIED="1782312117580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/process/import_/agent/nodes" />
     <SUITE FILE_PATH="coverage/ai_knowledge_base$node_entry.coverage" NAME="node_entry 覆盖结果" MODIFIED="1782187407025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/process/import_/agent/nodes" />
     <SUITE FILE_PATH="coverage/ai_knowledge_base$logger.coverage" NAME="logger 覆盖结果" MODIFIED="1782051954173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shared/runtime" />
     <SUITE FILE_PATH="coverage/ai_knowledge_base$providers.coverage" NAME="providers 覆盖结果" MODIFIED="1782053480371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/infra/config" />
+    <SUITE FILE_PATH="coverage/ai_knowledge_base$enrich_markdown_images.coverage" NAME="enrich_markdown_images 覆盖结果" MODIFIED="1782307501502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/rag/import_" />
     <SUITE FILE_PATH="coverage/ai_knowledge_base$pdf_parse_service.coverage" NAME="pdf_parse_service 覆盖结果" MODIFIED="1782187385550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/rag/import_" />
   </component>
 </project>
