@@ -252,4 +252,5 @@ def enrich_markdown_images(state: ImportGraphState) -> ImportGraphState:
     state['md_content'] = md_content_new
     # 7.备份md_content并更新状态中的md_path -> 文件名_new.md -> state[md_path]
     md_path_new: str = backup_new_md_content(md_content_new, md_path_obj)
+    state["md_path"] = md_path_new
     return state

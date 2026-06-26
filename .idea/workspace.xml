@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fc83fab-da17-4cc1-bf4b-7122f2dee203" name="更改" comment="功能：完成node_md_img节点的图片解析业务代码及其单元测试">
+    <list default="true" id="6fc83fab-da17-4cc1-bf4b-7122f2dee203" name="更改" comment="功能：给节点的业务功能代码增加日志功能">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_document_split.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/process/import_/agent/nodes/node_document_split.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/rag/import_/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/rag/import_/pdf_parse_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/pdf_parse_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/rag/import_/split_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/rag/import_/split_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +53,7 @@
     "Python.01_test_import_app_invoke.executor": "Run",
     "Python.enrich_markdown_images.executor": "Debug",
     "Python.logger.executor": "Run",
+    "Python.node_document_split.executor": "Run",
     "Python.node_entry.executor": "Debug",
     "Python.node_md_img.executor": "Debug",
     "Python.node_pdf_to_md.executor": "Run",
@@ -60,20 +64,20 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/PYcharm/PythonProject/ai_knowledge_base/notes",
+    "last_opened_file_path": "D:/PYcharm/PythonProject/ai_knowledge_base/app/rag/import_",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "editor.reader.mode",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\notes" />
       <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\app\rag\import_" />
+      <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\notes" />
       <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\app\infra\config" />
       <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\doc" />
       <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\shared" />
@@ -83,7 +87,7 @@
       <recent name="D:\PYcharm\PythonProject\ai_knowledge_base\shared\runtime" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.node_md_img">
+  <component name="RunManager" selected="Python.node_document_split">
     <configuration name="enrich_markdown_images" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ai_knowledge_base" />
       <option name="ENV_FILES" value="" />
@@ -99,6 +103,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/rag/import_/enrich_markdown_images.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="node_document_split" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ai_knowledge_base" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/process/import_/agent/nodes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/process/import_/agent/nodes/node_document_split.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -176,36 +203,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pdf_parse_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ai_knowledge_base" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/rag/import_" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/rag/import_/pdf_parse_service.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.node_document_split" />
         <item itemvalue="Python.node_md_img" />
         <item itemvalue="Python.enrich_markdown_images" />
         <item itemvalue="Python.node_pdf_to_md" />
         <item itemvalue="Python.node_entry" />
-        <item itemvalue="Python.pdf_parse_service" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +233,7 @@
       <workItem from="1781766443148" duration="32000" />
       <workItem from="1781766479694" duration="30896000" />
       <workItem from="1782135662538" duration="22419000" />
-      <workItem from="1782206632125" duration="31348000" />
+      <workItem from="1782206632125" duration="64192000" />
     </task>
     <task id="LOCAL-00001" summary="功能：项目初始化">
       <option name="closed" value="true" />
@@ -287,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782312730222</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="功能：给节点的业务功能代码增加日志功能">
+      <option name="closed" value="true" />
+      <created>1782313326085</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1782313326085</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +334,8 @@
     <MESSAGE value="功能：完成PDF转Markdown(node_pdf_to_md)节点功能" />
     <MESSAGE value="功能：增加infra中的minio和llm公共类通用功能" />
     <MESSAGE value="功能：完成node_md_img节点的图片解析业务代码及其单元测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="功能：完成node_md_img节点的图片解析业务代码及其单元测试" />
+    <MESSAGE value="功能：给节点的业务功能代码增加日志功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="功能：给节点的业务功能代码增加日志功能" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ai_knowledge_base$node_pdf_to_md.coverage" NAME="node_pdf_to_md 覆盖结果" MODIFIED="1782306817056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/process/import_/agent/nodes" />
@@ -333,6 +346,7 @@
     <SUITE FILE_PATH="coverage/ai_knowledge_base$logger.coverage" NAME="logger 覆盖结果" MODIFIED="1782051954173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shared/runtime" />
     <SUITE FILE_PATH="coverage/ai_knowledge_base$providers.coverage" NAME="providers 覆盖结果" MODIFIED="1782053480371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/infra/config" />
     <SUITE FILE_PATH="coverage/ai_knowledge_base$enrich_markdown_images.coverage" NAME="enrich_markdown_images 覆盖结果" MODIFIED="1782307501502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/rag/import_" />
+    <SUITE FILE_PATH="coverage/ai_knowledge_base$node_document_split.coverage" NAME="node_document_split 覆盖结果" MODIFIED="1782472916545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/process/import_/agent/nodes" />
     <SUITE FILE_PATH="coverage/ai_knowledge_base$pdf_parse_service.coverage" NAME="pdf_parse_service 覆盖结果" MODIFIED="1782187385550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/rag/import_" />
   </component>
 </project>
