@@ -11,9 +11,9 @@ from app.infra.vector_store.milvus_gateway import milvus_gateway
 from app.process.import_.agent.state import ImportGraphState
 from app.rag.import_.config import CHUNKS_SPLIT_TOP_NUMBER
 from app.shared.runtime.load_prompt import load_prompt
-from app.shared.runtime.logger import logger
+from app.shared.runtime.logger import logger, step_log
 
-
+@step_log("get_data_and_validates")
 def get_data_and_validates(state) -> tuple[list[dict[str, Any]], str]:
     file_title = state["file_title"]
     chunks = state["chunks"]
@@ -36,7 +36,7 @@ def get_data_and_validates(state) -> tuple[list[dict[str, Any]], str]:
 
     return chunks, file_title
 
-
+@step_log("recognize_item_name_by_chunks")
 def recognize_item_name_by_chunks(chunks: list[dict[str, Any], str], file_title: str):
     # 1.获取语言模型对象
     llm = llm_providers.chat()
@@ -62,14 +62,14 @@ def recognize_item_name_by_chunks(chunks: list[dict[str, Any], str], file_title:
         logger.warning(f"模型未识别到item_name使用file_title:{file_title}赋予默认值!")
     return item_name
 
-
+@step_log("chunk_update_item_name")
 def chunk_update_item_name(chunks, item_name):
     for chunk in chunks:
         chunk["item_name"] = item_name
 
     logger.info(f"完成chunk块的item_name属性跟新:{item_name}")
 
-
+@step_log("prepared_milvus_item_name_collection")
 def prepared_milvus_item_name_collection():
     # 1.获取milvus客户端
     milvus_client = milvus_gateway.milvus_client()
@@ -119,7 +119,7 @@ def prepared_milvus_item_name_collection():
         index_params=index_params,
     )
 
-
+@step_log("delete_and_insert_item_name")
 def delete_and_insert_item_name(item_name, file_title):
     # 1.根据item_name生成稠密稀疏向量
     result = llm_providers.generate_embeddings([item_name])
@@ -149,7 +149,7 @@ def delete_and_insert_item_name(item_name, file_title):
     )
     logger.info(f"完成{item_name}的数据更新或者插入!")
 
-
+@step_log("recognize_and_index_item_name")
 def recognize_and_index_item_name(state: ImportGraphState) -> ImportGraphState:
     """
     主体识别服务：
