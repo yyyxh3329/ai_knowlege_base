@@ -21,3 +21,6 @@ CHUNK_SIZE = 600
 CHUNK_OVERLAP = 50
 # 最小碎片阈值：低于这个长度判定为短碎片，需要尝试合并
 CHUNK_MIN = 400
+
+# 声明常量,切块的截取数量 默认: 10
+CHUNKS_SPLIT_TOP_NUMBER = 10
