@@ -24,3 +24,6 @@ CHUNK_MIN = 400
 
 # 声明常量,切块的截取数量 默认: 10
 CHUNKS_SPLIT_TOP_NUMBER = 10
+
+# 向量化批次大小：每批处理 6 条切片，避免显存溢出
+EMBEDDING_BATCH_SIZE = 6
