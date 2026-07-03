@@ -244,7 +244,7 @@ def download_and_extract_markdown(zip_url: str, local_path_obj: Path, file_name:
         md_obj_path = md_obj_list[0]
     # rename -> 真的会修改磁盘!!
     logger.info(f"触发了md文件的重命名机制,原名称:{md_obj_path.stem},目标名称:{file_name}")
-    md_obj_path.rename(md_obj_path.with_name(f"{file_name}.md"))
+    md_obj_path = md_obj_path.rename(md_obj_path.with_name(f"{file_name}.md"))
     return md_obj_path
 
 @step_log("parse_pdf_to_markdown")

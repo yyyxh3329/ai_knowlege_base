@@ -15,9 +15,9 @@ from app.shared.runtime.logger import logger, step_log
 
 @step_log("get_data_and_validates")
 def get_data_and_validates(state) -> tuple[list[dict[str, Any]], str]:
-    file_title = state["file_title"]
-    chunks = state["chunks"]
-    md_path = state["md_path"]
+    md_path = state.get("md_path")
+    file_title = state.get("file_title")
+    chunks = state.get("chunks")
 
     if not file_title:
         if md_path and Path(md_path).exists():
@@ -29,7 +29,7 @@ def get_data_and_validates(state) -> tuple[list[dict[str, Any]], str]:
     if not chunks:
         if md_path:
             chunks_json_obj: Path = Path(md_path).with_name(f"{Path(md_path).stem}.json")
-            chunks = json.load(chunks_json_obj.read_text(encoding="utf-8"))
+            chunks = json.loads(chunks_json_obj.read_text(encoding="utf-8"))
         if not chunks:
             logger.error(f"chunks为空,读取本地备份文件依然为空,业务无法继续进行!")
             raise ValueError(f"chunks为空,读取本地备份文件依然为空,业务无法继续进行!")
@@ -51,7 +51,7 @@ def recognize_item_name_by_chunks(chunks: list[dict[str, Any], str], file_title:
     user_prompt_text: str = load_prompt("item_name_recognition", file_title=file_title, context=use_content)
     # 3.封装成Message
     message = [
-        SystemMessage(content=user_prompt_text),
+        SystemMessage(content=system_prompt_text),
         HumanMessage(content=user_prompt_text)
     ]
     chain = llm | StrOutputParser()
@@ -67,7 +67,7 @@ def chunk_update_item_name(chunks, item_name):
     for chunk in chunks:
         chunk["item_name"] = item_name
 
-    logger.info(f"完成chunk块的item_name属性跟新:{item_name}")
+    logger.info(f"完成chunk的item_name属性更新: {item_name}")
 
 @step_log("prepared_milvus_item_name_collection")
 def prepared_milvus_item_name_collection():

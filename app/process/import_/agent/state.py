@@ -23,7 +23,7 @@ class ImportGraphState(TypedDict):
 
     md_content: str # md 文件内容
 
-    chunk: list # 切分后的文本块
+    chunks: list # 切分后的文本块
 
     item_name: str  # 主体 file_title兜底
 

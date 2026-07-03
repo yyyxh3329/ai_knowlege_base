@@ -23,8 +23,8 @@ def get_data_and_validates(state: ImportGraphState):
 
     if not chunks:
         if md_path:
-            chunks_json_obj: Path = Path(md_path).with_name(f"{Path(md_path)}.json")
-            chunks = json.load(chunks_json_obj.read_text(encoding="utf-8"))
+            chunks_json_obj: Path = Path(md_path).with_name(f"{Path(md_path).stem}.json")
+            chunks = json.loads(chunks_json_obj.read_text(encoding="utf-8"))
         if not chunks:
             logger.error(f"chunks为空,读取本地备份文件依然为空,业务无法继续进行!")
             raise ValueError(f"chunks为空,读取本地备份文件依然为空,业务无法继续进行!")
