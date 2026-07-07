@@ -40,3 +40,8 @@ class HistoryItemResponseSchema(BaseModel):
 class HistoryListResponseSchema(BaseModel):
     session_id: str
     items:list[HistoryItemResponseSchema] = Field(description="查询的数据记录列表",default_factory=list)
+
+# 清除历史记录的响应
+class HistoryClearResponseSchema(BaseModel):
+    message: str
+    deleted_count:int

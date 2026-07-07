@@ -7,7 +7,7 @@ from fastapi import FastAPI, BackgroundTasks,Request
 from starlette.middleware.cors import CORSMiddleware
 
 from app.api.schema.query_schema import HealthResponseSchema, QueryRequestSchema, QueryStreamResponseSchema, \
-    QueryNotStreamResponseSchema, HistoryListResponseSchema, HistoryItemResponseSchema
+    QueryNotStreamResponseSchema, HistoryListResponseSchema, HistoryItemResponseSchema, HistoryClearResponseSchema
 from app.infra.persistence.history_repository import history_repository
 from app.process.import_.agent.state import create_default_state
 from app.process.query.agent.mian_graph import query_app
@@ -164,6 +164,14 @@ def get_history(session_id:str,limit:int=10):
             )
             for item in history_list]
 
+    )
+
+@app.delete("/history/{session_id}")
+def delete(session_id:str,request:Request):
+    deleted_count = history_repository.clear_session(session_id)
+    return HistoryClearResponseSchema(
+        message=f"session_id:{session_id}历史聊天记录已经清空!",
+        deleted_count=deleted_count
     )
 
 
