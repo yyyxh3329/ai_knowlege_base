@@ -6,9 +6,9 @@ from app.infra.persistence.history_repository import history_repository
 from app.infra.vector_store.milvus_gateway import milvus_gateway
 from app.process.query.agent.state import QueryGraphState
 from app.shared.runtime.load_prompt import load_prompt
-from app.shared.runtime.logger import logger
+from app.shared.runtime.logger import logger, step_log
 
-
+@step_log("get_data_and_validates")
 def get_data_and_validates(state: QueryGraphState) -> tuple[str,str]:
     # 1.获取参数
     session_id = state.get("session_id")
@@ -20,7 +20,7 @@ def get_data_and_validates(state: QueryGraphState) -> tuple[str,str]:
 
     return session_id, original_query
 
-
+@step_log("get_history_messages_and_context")
 def get_history_messages_and_context(session_id:str):
     # 1.先进行查询
     message_list:list[dict] = history_repository.list_recent(session_id=session_id,limit=10)
@@ -45,7 +45,7 @@ def get_history_messages_and_context(session_id:str):
                          f"关联主体：{','.join(item.get('item_names',[]))} \n")
     return history_text
 
-
+@step_log("call_llm_item_name_and_rewritten")
 def call_llm_item_name_and_rewritten(history_text, original_query):
     # 1、加载模型对象
     llm_client = llm_providers.chat()
@@ -67,7 +67,7 @@ def call_llm_item_name_and_rewritten(history_text, original_query):
         result_dict["rewritten_query"] = original_query
     return result_dict
 
-
+@step_log("search_by_item_names")
 def search_by_item_names(item_names:list[str]):
     # 准备一个最终的字典
     final_result = {}
@@ -103,7 +103,7 @@ def search_by_item_names(item_names:list[str]):
         final_result[item_name] = item_name_milvus_list
     return final_result
 
-
+@step_log("select_item_names_by_source")
 def select_item_names_by_source(milvus_result:dict[str,list[dict]]):
 
     confirmed_list = []
@@ -136,7 +136,7 @@ def select_item_names_by_source(milvus_result:dict[str,list[dict]]):
         "option_list": option_list
     }
 
-
+@step_log("apply_item_name_result")
 def apply_item_name_result(state:QueryGraphState, list_dict:dict, rewritten_query:str):
     """
           本次就是为了state
@@ -178,7 +178,7 @@ def apply_item_name_result(state:QueryGraphState, list_dict:dict, rewritten_quer
 
     state['answer'] = "本次问题没有关联到任何主体,有没有相似可选的主体! 请您明确主体再提问!"
 
-
+@step_log("save_history_message")
 def save_history_message(state:QueryGraphState):
     history_repository.save_message(
         session_id=state.get('session_id'),
