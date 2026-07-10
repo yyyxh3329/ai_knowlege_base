@@ -81,7 +81,7 @@ def deal_milvus_list(llm_milvus_result):
     for item in llm_milvus_result:
         entity = item.get("entity", {})
         hyde_embedding_chunks.append({
-            "id": entity.get("chunk_id"),  # item.get("id") or item.get("chunk_id")
+            "chunk_id": entity.get("chunk_id"),  # item.get("id") or item.get("chunk_id")
             "score": item.get("distance", 0.0),
             "title": entity.get("title"),
             "file_title": entity.get("file_title"),

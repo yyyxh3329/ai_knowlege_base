@@ -56,7 +56,7 @@ def deal_milvus_list(milvus_result_list:list[dict[str, Any]]):
         # item = {id/chunk_id:x,distance:0.9,entity:{输出的field}
         entity = item.get("entity",{})
         embedding_chunks.append({
-            "id": entity.get("chunk_id"),
+            "chunk_id": entity.get("chunk_id"),
             "score": item.get("distance",0.0),
             "title": entity.get("title"),
             "file_title": entity.get("file_title"),
